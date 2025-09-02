@@ -20,7 +20,6 @@ def emotion_detector(text_to_analyse):
     try:
         response = requests.post(url, headers=headers, json=input_json)
         emotions = response.json()["emotionPredictions"][0]["emotion"]
-        print(get_dominant_emotion(emotions))
         return emotions
     except requests.exceptions.RequestException as e:
         print(f"Error occurred: {e}")
